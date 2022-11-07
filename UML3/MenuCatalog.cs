@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UML3 {
     public class MenuCatalog : IMenuCatalog {
-        //dictinoray or list
+        //dictinoray or list of type IMenuItem (same as MusicianRepository from Orchestra solution)
         public int Count { get; }
         public void Add(IMenuItem aMenuItem);
         public IMenuItem Search(int number);
