@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static UML3.IMenuItem;
-
 namespace UML3 {
     abstract class MenuItem : IMenuItem {
-        /*
-         * Abstract: en klasse der ikke kan bruges til a skabe objekter og for at kunne bruge den skal den arves fra en klasse. 
-         */
+        //Abstract: en klasse der ikke kan bruges til a skabe objekter.
+        //For at kunne bruge den skal den arves fra en klasse. 
         public int Number { get; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -22,8 +20,13 @@ namespace UML3 {
         public bool Cheese { get; set; }
 
         public virtual string PrintInfo() {
-            return $"Number: {Number}, Name: {Name}, Description: {Description}, Price: {Price}, Type: {Type}, Vegan: {IsVegan}, Organic: {IsOrgranic}";
+            return $"Number: {Number}, " +
+                   $"Name: {Name}, " +
+                   $"Description: {Description}, " +
+                   $"Price: {Price}, " +
+                   $"Type: {Type}, " +
+                   $"Vegan: {IsVegan}, " +
+                   $"Organic: {IsOrgranic}";
         }
-
     }
 }

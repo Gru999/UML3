@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace UML3 { 
     class Pizza : MenuItem {
 
-        public Pizza(int number, string name, string description, double price, IMenuItem.MenuType type, bool isVegan, bool isOrganic, bool deepPan  ) {
+        public Pizza(int number, string name, string description, double price, MenuType type, bool isVegan, bool isOrganic, bool deepPan  ) {
             //this.Number = number;
             this.Name = name;
             this.Description = description; 
@@ -19,7 +19,8 @@ namespace UML3 {
         }
 
         public override string PrintInfo() {
-            return $"Number: {Number}, Name: {Name}, Description: {Description}, Price: {Price}, Type: {Type}, Vegan: {IsVegan}, Organic: {IsOrgranic}, DeepPan: {DeepPan}";
+            return $"{base.PrintInfo()} + {DeepPan}";
+            //return $"Number: {Number}, Name: {Name}, Description: {Description}, Price: {Price}, Type: {Type}, Vegan: {IsVegan}, Organic: {IsOrgranic}, DeepPan: {DeepPan}";
         }
     }
 }

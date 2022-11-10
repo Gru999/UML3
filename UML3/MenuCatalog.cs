@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace UML3 {
     public class MenuCatalog : IMenuCatalog {
         //dictinoray or list of type IMenuItem (same as MusicianRepository from Orchestra solution)

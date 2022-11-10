@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace UML3 {
     public interface IMenuItem {
-        public enum MenuType { Pizza, Pasta, Topping, SoftDrink, AlcoholicDrink }
             int Number { get; }
             string Name { get; set; }
             string Description { get; set; }
@@ -15,5 +13,11 @@ namespace UML3 {
             bool IsVegan { get; set; } 
             bool IsOrgranic { get; set; }
             string PrintInfo();
+        //constructor
+        public IMenuItem()
+        {
+
+        }
     }
+    public enum MenuType { Pizza, Pasta, Topping, SoftDrink, AlcoholicDrink }
 }

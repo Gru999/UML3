@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace UML3
-{
+namespace UML3 {
     public interface IMenuCatalog {
         int Count { get; }
         void Add(IMenuItem aMenuItem);
@@ -15,8 +13,8 @@ namespace UML3
         void PrintBeverageMenu();
         void PrintPastaMenu();
         void Update(int number, IMenuItem theMenuItem);
-        List<IMenuItem> FindAllVegan(IMenuItem.MenuType type);
-        List<IMenuItem> FindAllOrganic(IMenuItem.MenuType type);
+        List<IMenuItem> FindAllVegan(MenuType type);
+        List<IMenuItem> FindAllOrganic(MenuType type);
         IMenuItem MostExpensiveMenuItem();
     }
 }
