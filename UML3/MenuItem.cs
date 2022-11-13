@@ -14,7 +14,7 @@ namespace UML3 {
         public double Price { get; set; }
         public MenuType Type { get; set; }
         public bool IsVegan { get; set; }
-        public bool IsOrgranic { get; set; }
+        public bool IsOrganic { get; set; }
         public bool DeepPan { get; set; }
         public bool Alcohol { get; set; }
         public bool Cheese { get; set; }
@@ -26,7 +26,7 @@ namespace UML3 {
                    $"Price: {Price}, " +
                    $"Type: {Type}, " +
                    $"Vegan: {IsVegan}, " +
-                   $"Organic: {IsOrgranic}";
+                   $"Organic: {IsOrganic}";
         }
     }
 }

@@ -13,7 +13,7 @@ namespace UML3 {
             this.Price = price;
             this.Type = type;
             this.IsVegan = isVegan;
-            this.IsOrgranic = isOrganic;
+            this.IsOrganic = isOrganic;
             this.Alcohol = alcohol;
         }
 
