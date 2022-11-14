@@ -14,9 +14,10 @@ namespace UML3 {
         public IMenuItem Search(int number) {
             foreach (IMenuItem item in _menuItem) {
                 if (item.Number == number) {
-                    return item.Number;
+                    return item;
                 }
             }
+            return null;
         }
 
         public void Delete(int number) {
@@ -24,46 +25,58 @@ namespace UML3 {
         }
 
         public void PrintPizzaMenu() {
-            foreach (IMenuItem item in _menuItem)
-            {
+            foreach (IMenuItem item in _menuItem) {
                 Console.WriteLine(item);
             }
         }
 
+        //dosen't print just the beverage menu
         public void PrintBeverageMenu() {
-            foreach (IMenuItem item in _menuItem)
-            {
+            foreach (IMenuItem item in _menuItem) {
                 Console.WriteLine(item);
             }
         }
 
         public void PrintPastaMenu() {
-            foreach (IMenuItem item in _menuItem)
-            {
+            foreach (IMenuItem item in _menuItem) {
                 Console.WriteLine(item);
             }
         }
-        
-        public void Update(int number, IMenuItem theMenuItem);
 
-        public List<IMenuItem> FindAllVegan(MenuType type) { 
+        public void Update(int number, IMenuItem theMenuItem) { 
             
         }
 
-        public List<IMenuItem> FindAllOrganic(MenuType type) {
-            if (type == MenuType.Pizza || type == MenuType.Pasta)
-            {
-                foreach (IMenuItem item in _menuItem)
-                {
-                    if (item.IsOrganic)
-                    {
-                        Console.WriteLine(item);                        
-                    }
+        public List<IMenuItem> FindAllVegan(MenuType type) {
+            List<IMenuItem> veganItems = new List<IMenuItem>(); 
+            foreach (IMenuItem item in _menuItem) {
+                if (item.IsVegan) { 
+                    veganItems.Add(item);
+                    return veganItems;
                 }
             }
-
+            return null;
         }
 
-        public IMenuItem MostExpensiveMenuItem();
+        public List<IMenuItem> FindAllOrganic(MenuType type) {
+            List<IMenuItem> organicItems = new List<IMenuItem>();
+            foreach (IMenuItem item in _menuItem) {
+                if (item.IsOrganic) {
+                    organicItems.Add(item);
+                    return organicItems;
+                }
+            }
+            return null;
+        }
+
+        public IMenuItem MostExpensiveMenuItem() {
+            //double maxPrice = 0;
+            //foreach (IMenuItem item in _menuItem) {
+            //    if (item.Price > maxPrice) {
+            //        maxPrice = item.Price;
+            //    } else if (item.Price) { } 
+            //}
+            return null;
+        }
     }
 }

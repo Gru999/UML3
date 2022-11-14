@@ -19,6 +19,19 @@ namespace UML3 {
         public bool Alcohol { get; set; }
         public bool Cheese { get; set; }
 
+        //constructor
+        public IMenuItem(int number, string name, string description, double price, MenuType type, bool isvegan, bool isorganic)
+        {
+            Number = number;
+            Name = name;
+            Description = description;
+            Price = price;
+            Type = type;
+            IsVegan = isvegan;
+            IsOrganic = isorganic;
+
+        }
+
         public virtual string PrintInfo() {
             return $"Number: {Number}, " +
                    $"Name: {Name}, " +

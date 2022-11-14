@@ -13,11 +13,7 @@ namespace UML3 {
             bool IsVegan { get; set; } 
             bool IsOrganic { get; set; }
             string PrintInfo();
-        //constructor
-        //public IMenuItem(int number, string name, string description, double price, MenuType type, bool isvegan, bool isorganic)
-        //{
-
-        //}
+            //IMenuItem();
     }
     public enum MenuType { Pizza, Pasta, Topping, SoftDrink, AlcoholicDrink }
 }
