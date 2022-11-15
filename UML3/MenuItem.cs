@@ -8,28 +8,23 @@ namespace UML3 {
     abstract class MenuItem : IMenuItem {
         //Abstract: en klasse der ikke kan bruges til a skabe objekter.
         //For at kunne bruge den skal den arves fra en klasse. 
-        public int Number { get; }
+        private int _number;
+        public int Number { get { return _number; } }
         public string Name { get; set; }
         public string Description { get; set; }
         public double Price { get; set; }
         public MenuType Type { get; set; }
         public bool IsVegan { get; set; }
         public bool IsOrganic { get; set; }
-        public bool DeepPan { get; set; }
-        public bool Alcohol { get; set; }
-        public bool Cheese { get; set; }
 
-        //constructor
-        public IMenuItem(int number, string name, string description, double price, MenuType type, bool isvegan, bool isorganic)
-        {
-            Number = number;
+        public MenuItem(int number, string name, string description, double price, MenuType type) {
+            _number = number;
             Name = name;
             Description = description;
             Price = price;
             Type = type;
-            IsVegan = isvegan;
-            IsOrganic = isorganic;
-
+            IsVegan = true;
+            IsOrganic = true;
         }
 
         public virtual string PrintInfo() {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 namespace UML3 {
+    public enum MenuType { Pizza, Pasta, Topping, SoftDrink, AlcoholicDrink }
     public interface IMenuItem {
             int Number { get; }
             string Name { get; set; }
@@ -13,7 +14,5 @@ namespace UML3 {
             bool IsVegan { get; set; } 
             bool IsOrganic { get; set; }
             string PrintInfo();
-            //IMenuItem();
     }
-    public enum MenuType { Pizza, Pasta, Topping, SoftDrink, AlcoholicDrink }
 }
