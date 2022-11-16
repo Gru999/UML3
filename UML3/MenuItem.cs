@@ -28,13 +28,13 @@ namespace UML3 {
         }
 
         public virtual string PrintInfo() {
-            return $"Number: {Number}, " +
-                   $"Name: {Name}, " +
-                   $"Description: {Description}, " +
-                   $"Price: {Price}, " +
-                   $"Type: {Type}, " +
-                   $"Vegan: {IsVegan}, " +
-                   $"Organic: {IsOrganic}";
+            return $" Number: {Number}\n " +
+                   $"Name: {Name}\n " +
+                   $"Description: {Description}\n " +
+                   $"Price: {Price}\n " +
+                   $"Menutype: {Type}\n " +
+                   $"IsVegan: {IsVegan}\n " +
+                   $"IsOrganic: {IsOrganic}\n";
         }
     }
 }

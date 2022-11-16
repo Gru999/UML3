@@ -6,15 +6,22 @@ using System.Threading.Tasks;
 namespace UML3 {
     public class MenuCatalog : IMenuCatalog {
         //dictinoray or list of type IMenuItem (same as MusicianRepository from Orchestra solution)
-        private List<IMenuItem> _menuItem;
-        public int Count { get; }
+        List<IMenuItem> _menuItem;
+        public int Count { get { return _menuItem.Count; } }
+
+        public MenuCatalog() {
+            _menuItem = new List<IMenuItem>();
+        }
+
         public void Add(IMenuItem aMenuItem) {
             _menuItem.Add(aMenuItem);
         }
+
+        //returns MenuType
         public IMenuItem Search(int number) {
             foreach (IMenuItem item in _menuItem) {
                 if (item.Number == number) {
-                    return item;
+                    Console.WriteLine(item.PrintInfo());
                 }
             }
             return null;
@@ -24,27 +31,34 @@ namespace UML3 {
             _menuItem.RemoveAt(number);
         }
 
+
         public void PrintPizzaMenu() {
-            foreach (IMenuItem item in _menuItem) {
-                Console.WriteLine(item);
+            foreach (MenuItem item in _menuItem) {
+                if (item.Type == MenuType.Pizza) {
+                    Console.WriteLine(item.PrintInfo());
+                }
             }
         }
 
-        //dosen't print just the beverage menu
         public void PrintBeverageMenu() {
-            foreach (IMenuItem item in _menuItem) {
-                Console.WriteLine(item);
+            foreach (MenuItem item in _menuItem) {
+                if (item.Type == MenuType.SoftDrink) {
+                    Console.WriteLine(item.PrintInfo());
+                }
             }
         }
 
         public void PrintPastaMenu() {
-            foreach (IMenuItem item in _menuItem) {
-                Console.WriteLine(item);
+            foreach (MenuItem item in _menuItem) {
+                if (item.Type == MenuType.Pasta) {
+                    Console.WriteLine(item.PrintInfo());
+                }
             }
         }
 
-        public void Update(int number, IMenuItem theMenuItem) { 
-            
+        public void Update(int number, IMenuItem theMenuItem) {
+            int menuIndex = _menuItem.IndexOf(Search(number));
+            _menuItem[menuIndex] = theMenuItem;
         }
 
         public List<IMenuItem> FindAllVegan(MenuType type) {
@@ -70,13 +84,14 @@ namespace UML3 {
         }
 
         public IMenuItem MostExpensiveMenuItem() {
-            //double maxPrice = 0;
-            //foreach (IMenuItem item in _menuItem) {
-            //    if (item.Price > maxPrice) {
-            //        maxPrice = item.Price;
-            //    } else if (item.Price) { } 
+            //foreach (MenuItem item in _menuItem) {
+            //    if (item.Price == _menuItem) {
+            //        Console.WriteLine(item);
+            //    }
             //}
-            return null;
+            //return null;
+            var highPrice = _menuItem.Max(a => a.Price);
+            Console.WriteLine(highPrice);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace UML3 {
         }
 
         public override string PrintInfo() {
-            return $"{base.PrintInfo()} + {DeepPan}";
+            return $"{base.PrintInfo()} DeepPan: {DeepPan}\n";
         }
     }
 }

@@ -11,7 +11,7 @@ namespace UML3 {
         }
         
         public override string PrintInfo() {
-            return $"{base.PrintInfo()} + {Cheese}";
+            return $"{base.PrintInfo()} Cheese: {Cheese}\n";
         }
     }
 }

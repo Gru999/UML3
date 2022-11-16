@@ -12,7 +12,7 @@ namespace UML3 {
         }
 
         public override string PrintInfo() {
-            return $"{base.PrintInfo()} + {Alcohol}";
+            return $"{base.PrintInfo()} Alcohol: {Alcohol}\n";
         }
     }
 }
