@@ -28,36 +28,43 @@ try {
     catalog.Add(b2);
 
     Console.WriteLine($"There are {catalog.Count} items on the menu");
+
+    //Search method test
+    //catalog.Search(9);
+
+    //Delete method test
+    catalog.Delete(9);
+
+    Console.WriteLine($"There are {catalog.Count} items on the menu");
+
+    //Print Pizza Menu method test
+    //catalog.PrintPizzaMenu();
+
+    //Print Beverage Menu method test
+    //catalog.PrintBeverageMenu();
+
+    //Print Pasta Menu method test
+    //catalog.PrintPastaMenu();
+
+    //Update method test
+    //catalog.Update(4, p2);
+
+    //List methods test
+    //List<IMenuItem> veganItems = catalog.FindAllVegan(MenuType.Pizza);
+    //List<IMenuItem> organicItems = catalog.FindAllOrganic(MenuType.Pizza);
+
+    //foreach (IMenuItem veganItem in veganItems) {
+    //    Console.WriteLine(veganItem.PrintInfo());
+    //}
+
+    //foreach (IMenuItem organicItem in organicItems) {
+    //    Console.WriteLine(organicItem.PrintInfo());
+    //}
+
+    //Most Expensive Item method test
+    //catalog.MostExpensiveMenuItem();
 }
-//////Search method test
-////Console.WriteLine(catalog.Search(3));
 
-////Print Pizza Menu method test
-//catalog.PrintPizzaMenu();
-
-////Print Beverage Menu method test
-//catalog.PrintBeverageMenu();
-
-////Print Pasta Menu method test
-//catalog.PrintPastaMenu();
-
-////Update method test
-//catalog.Update(4, p2);
-
-////List methods test
-//List<IMenuItem> veganItems = catalog.FindAllVegan(MenuType.Pizza);
-//List<IMenuItem> organicItems = catalog.FindAllOrganic(MenuType.Pizza);
-
-//foreach (IMenuItem veganItem in veganItems) {
-//    Console.WriteLine(veganItem.PrintInfo());
-//}
-
-//foreach (IMenuItem organicItem in organicItems) {
-//    Console.WriteLine(organicItem.PrintInfo());
-//}
-
-////Most Expensive Item method test
-//catalog.MostExpensiveMenuItem();
 
 catch (Exception ex)
 {

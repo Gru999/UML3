@@ -22,18 +22,30 @@ namespace UML3 {
             _menuItem.Add(aMenuItem);
         }
 
-        //returns MenuType
+        //implement the same as in mostExpensive
         public IMenuItem Search(int number) {
             foreach (IMenuItem item in _menuItem) {
                 if (item.Number == number) {
                     Console.WriteLine(item.PrintInfo());
                 }
+                if (item.Number != number && number < item.Number) {
+                    throw new Exception("The entered number is out of scope");
+                }
             }
             return null;
         }
 
+        //Collection was modified - spørg Poul om fejl 
         public void Delete(int number) {
-            _menuItem.RemoveAt(number);
+            foreach (IMenuItem item in _menuItem) {
+                if (item.Number == number) {
+                    _menuItem.Remove(item);
+                    Console.WriteLine("The item have been removed");
+                }
+                if (item.Number != number && number < item.Number) {
+                    throw new Exception("The item you wish to delete does not exist in the current context");
+                }   
+            }
         }
 
 
