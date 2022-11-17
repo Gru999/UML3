@@ -33,9 +33,7 @@ try {
     //catalog.Search(9);
 
     //Delete method test
-    catalog.Delete(9);
-
-    Console.WriteLine($"There are {catalog.Count} items on the menu");
+    //catalog.Delete(8);
 
     //Print Pizza Menu method test
     //catalog.PrintPizzaMenu();
@@ -62,7 +60,7 @@ try {
     //}
 
     //Most Expensive Item method test
-    //catalog.MostExpensiveMenuItem();
+    catalog.MostExpensiveMenuItem();
 }
 
 

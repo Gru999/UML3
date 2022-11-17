@@ -22,13 +22,12 @@ namespace UML3 {
             _menuItem.Add(aMenuItem);
         }
 
-        //implement the same as in mostExpensive
         public IMenuItem Search(int number) {
             foreach (IMenuItem item in _menuItem) {
                 if (item.Number == number) {
                     Console.WriteLine(item.PrintInfo());
                 }
-                if (item.Number != number && number < item.Number) {
+                if (0 > number || number > _menuItem.Count) {
                     throw new Exception("The entered number is out of scope");
                 }
             }
@@ -38,17 +37,18 @@ namespace UML3 {
         //Collection was modified - spørg Poul om fejl 
         public void Delete(int number) {
             foreach (IMenuItem item in _menuItem) {
+                //var info = _menuItem.IndexOf(item);
                 if (item.Number == number) {
                     _menuItem.Remove(item);
                     Console.WriteLine("The item have been removed");
-                }
-                if (item.Number != number && number < item.Number) {
+                } 
+                if (0 > number || number > _menuItem.Count) {
                     throw new Exception("The item you wish to delete does not exist in the current context");
                 }   
             }
         }
 
-
+        //No input, therefor no exception
         public void PrintPizzaMenu() {
             foreach (MenuItem item in _menuItem) {
                 if (item.Type == MenuType.Pizza) {
@@ -73,17 +73,24 @@ namespace UML3 {
             }
         }
 
+        //search exception might be possible
         public void Update(int number, IMenuItem theMenuItem) {
             int menuIndex = _menuItem.IndexOf(Search(number));
             _menuItem[menuIndex] = theMenuItem;
+            if (menuIndex < 0 || menuIndex > _menuItem.Count) {
+                throw new Exception("The number is out of scope");
+            }
         }
-
+                
         public List<IMenuItem> FindAllVegan(MenuType type) {
             List<IMenuItem> veganItems = new List<IMenuItem>(); 
             foreach (IMenuItem item in _menuItem) {
                 if (item.IsVegan) { 
                     veganItems.Add(item);
                     return veganItems;
+                }
+                if (item.Type != MenuType.Pizza || item.Type != MenuType.Pasta || item.Type != MenuType.SoftDrink || item.Type != MenuType.AlcoholicDrink) {
+                    throw new Exception("No such Menu Type exists");
                 }
             }
             return null;
@@ -96,19 +103,20 @@ namespace UML3 {
                     organicItems.Add(item);
                     return organicItems;
                 }
+                if (item.Type != MenuType.Pizza || item.Type != MenuType.Pasta || item.Type != MenuType.SoftDrink || item.Type != MenuType.AlcoholicDrink) {
+                        throw new Exception("No such Menu Type exists");
+                }
             }
             return null;
         }
-
+        
+        //make sure the price can't get updated to -money or something, either here or in update
         public IMenuItem MostExpensiveMenuItem() {
-            //foreach (MenuItem item in _menuItem) {
-            //    if (item.Price == _menuItem) {
-            //        Console.WriteLine(item);
-            //    }
-            //}
-            //return null;
-            var highPrice = _menuItem.Max(a => a.Price);
-            Console.WriteLine(highPrice);
+            foreach (MenuItem item in _menuItem) {
+                if (item.Price == _menuItem.Max(i => i.Price)) {
+                    Console.WriteLine(item.PrintInfo());
+                }
+            }
             return null;
         }
     }
