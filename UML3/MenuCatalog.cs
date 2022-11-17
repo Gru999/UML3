@@ -14,6 +14,11 @@ namespace UML3 {
         }
 
         public void Add(IMenuItem aMenuItem) {
+            foreach (IMenuItem item in _menuItem) {
+                if (aMenuItem.Number == item.Number) {
+                    throw new Exception("A similar Object already exist");
+                }
+            }
             _menuItem.Add(aMenuItem);
         }
 
@@ -92,6 +97,7 @@ namespace UML3 {
             //return null;
             var highPrice = _menuItem.Max(a => a.Price);
             Console.WriteLine(highPrice);
+            return null;
         }
     }
 }
