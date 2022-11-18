@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 namespace UML3 {
@@ -53,8 +54,7 @@ namespace UML3 {
         public void PrintPizzaMenu() {
             foreach (MenuItem item in _menuItem) {
                 if (item.Type == MenuType.Pizza) {
-                    var i = item.PrintInfo();
-                    return i;
+                    Console.WriteLine(item.PrintInfo());
                 }
             }
         }
@@ -75,7 +75,6 @@ namespace UML3 {
             }
         }
 
-        //search exception might be possible
         public void Update(int number, IMenuItem theMenuItem) {
             int menuIndex = _menuItem.IndexOf(Search(number));
             _menuItem[menuIndex] = theMenuItem;
@@ -90,9 +89,9 @@ namespace UML3 {
                 if (item.IsVegan && type == item.Type) { 
                     veganItems.Add(item);  
                 }
-                if (type != item.Type) {
-                    throw new Exception("No such Menu Type exists");
-                }
+            }
+            if (!(type is Enum)) {
+                throw new Exception("No such Menu Type exists");
             }
             return veganItems;
         }
@@ -103,22 +102,21 @@ namespace UML3 {
                 if (item.IsOrganic && type == item.Type) {
                     organicItems.Add(item);
                 }
-                if (type != item.Type) {
+                if (!(type is Enum)) {
                         throw new Exception("No such Menu Type exists");
                 }
             }
             return organicItems;
         }
         
-        //make sure the price can't get updated to -money or something, either here or in update
         public IMenuItem MostExpensiveMenuItem() {
             IMenuItem j = null;
             foreach (IMenuItem item in _menuItem) {
                 if (item.Price == _menuItem.Max(i => i.Price)) {
-                    
+                    j = item;
                 }
             }
-            return ;
+            return j;
         }
     }
 }

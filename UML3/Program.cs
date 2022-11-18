@@ -6,7 +6,7 @@ IMenuCatalog catalog = new MenuCatalog();
     Pizza p3 = new Pizza(3, "New York", "-Tomat, Ost, Pepperoni og Løg", 72, MenuType.Pizza, true);
 
     //Exception test object
-    Pizza p4 = new Pizza(1, "Hawaii", "-Tomat, Ost, Skinke og Ananas", 58, MenuType.Pizza, false);
+    //Pizza p4 = new Pizza(1, "Hawaii", "-Tomat, Ost, Skinke og Ananas", 58, MenuType.Pizza, false);
 
 
     Pasta pa1 = new Pasta(4, "Carbonnara", "-Bacon, Æg, ost og Flødesauce", 70, MenuType.Pasta, true);
@@ -30,10 +30,11 @@ try {
     Console.WriteLine($"There are {catalog.Count} items on the menu");
 
     //Search method test
-    //catalog.Search(9);
+    //Console.WriteLine(catalog.Search(3).PrintInfo());
 
     //Delete method test
-    //catalog.Delete(8);
+    //catalog.Delete(4);
+    //Console.WriteLine($"There are {catalog.Count} items on the menu");
 
     //Print Pizza Menu method test
     //catalog.PrintPizzaMenu();
@@ -45,22 +46,25 @@ try {
     //catalog.PrintPastaMenu();
 
     //Update method test
-    //catalog.Update(4, p2);
+    //catalog.Update(1, p4);
+
 
     //List methods test
-    List<IMenuItem> veganItems = catalog.FindAllVegan(MenuType.Pizza);
+    //List<IMenuItem> veganItems = catalog.FindAllVegan(MenuType.Pizza);
     //List<IMenuItem> organicItems = catalog.FindAllOrganic(MenuType.Pizza);
 
-    //foreach (IMenuItem veganItem in veganItems) {
+    //foreach (IMenuItem veganItem in veganItems)
+    //{
     //    Console.WriteLine(veganItem.PrintInfo());
     //}
 
-    //foreach (IMenuItem organicItem in organicItems) {
+    //foreach (IMenuItem organicItem in organicItems)
+    //{
     //    Console.WriteLine(organicItem.PrintInfo());
     //}
 
     //Most Expensive Item method test
-    catalog.MostExpensiveMenuItem();
+    //Console.WriteLine(catalog.MostExpensiveMenuItem().PrintInfo());
 }
 
 
