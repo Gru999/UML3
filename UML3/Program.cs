@@ -48,7 +48,7 @@ try {
     //catalog.Update(4, p2);
 
     //List methods test
-    //List<IMenuItem> veganItems = catalog.FindAllVegan(MenuType.Pizza);
+    List<IMenuItem> veganItems = catalog.FindAllVegan(MenuType.Pizza);
     //List<IMenuItem> organicItems = catalog.FindAllOrganic(MenuType.Pizza);
 
     //foreach (IMenuItem veganItem in veganItems) {

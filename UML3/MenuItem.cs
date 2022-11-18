@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static UML3.IMenuItem;
 namespace UML3 {
-    abstract class MenuItem : IMenuItem {
+    public abstract class MenuItem : IMenuItem {
         //Abstract: en klasse der ikke kan bruges til a skabe objekter.
         //For at kunne bruge den skal den arves fra en klasse. 
         private int _number;
