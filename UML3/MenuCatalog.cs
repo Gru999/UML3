@@ -6,11 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace UML3 {
     public class MenuCatalog : IMenuCatalog {
-        //dictinoray or list of type IMenuItem (same as MusicianRepository from Orchestra solution)
-        //make them return instead of print
-        //mostexpensive can be shorter
-        //list needs exception fix
-        List<IMenuItem> _menuItem;
+        private List<IMenuItem> _menuItem;
         public int Count { get { return _menuItem.Count; } }
 
         public MenuCatalog() {
